@@ -14,21 +14,24 @@ var jakeLikes = {
 router.post('/isaac', function(req, res){
   console.log('post request for isaac received');
   isaacLikes.likeCount++;
+  console.log(isaacLikes);
   res.sendStatus(201);
 });
 
 router.post('/jake', function(req, res){
+  console.log('post request for jake received');
   jakeLikes.likeCount++;
+  console.log(jakeLikes);
   res.sendStatus(201);
 });
 
 router.get('/isaac', function(req, res){
   console.log('get request for isaac received');
   res.send(isaacLikes);
-}
+});
 
 router.get('/jake', function(req, res){
   res.send(jakeLikes);
-}
+});
 
 module.exports = router;
